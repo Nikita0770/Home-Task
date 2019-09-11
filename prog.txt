@@ -1,0 +1,72 @@
+#include <iostream>
+
+// додаткова бібліотека 
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+	// генератор випадкових чисел
+	srand((unsigned)time(NULL));
+	setlocale(LC_ALL, ".1251");
+	system("color 1F");
+
+	// розміри матрицi
+	int A[100][100], B[100][100], C[100];
+	int n, k, i;
+	char z;
+
+	n = 7;
+	int a = 1;
+	int b = 9;
+
+	do
+	{
+		system("cls");
+		printf("\n\tЗаповнення матрицi A[%2i][%2i] цiлими двозначними числами. \n\n", n, n);
+
+		for (k = 0; k < n; k++)
+		{
+			for (i = 0; i < n; i++)
+			{
+				do
+				{
+					A[k][i] = a + rand() % (b - a + 1);
+				} while (abs(A[k][i])<0 || abs(A[k][i])>9);
+				printf("%5i", A[k][i]);
+			}
+			cout << "\n";
+		}
+
+		cout << "\n\n";
+		for (k = 0; k < n;k++) {
+
+			for (int j = 0; j < n; j++) C[j] = A[k][j];
+			for (i = 0; i < n;i++) {
+				B[i][n - k-1] = C[i];
+
+			}
+		
+		}
+
+
+		for (k = 0; k < n; k++) {
+			for (i = 0; i < n; i++) {
+				printf("%5i", B[k][i]);
+			}
+			cout << "\n";
+
+		}
+
+
+
+
+		cout << "\n\n\tПродовжити (y/n)? ";
+		cin >> z;
+	} while (z != 'n');
+
+	cout << endl << endl << "\t";
+	//system("pause");
+	return 0;
+}
