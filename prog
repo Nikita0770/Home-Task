@@ -1,0 +1,68 @@
+#include <iostream>
+#include <string>
+
+
+using namespace std;
+
+int main() {
+	setlocale(LC_ALL, ".1251");
+	system("color 1F");
+
+	string B[3][3] = { {"Команда","Файл","бiт"},{"Смартфон","Миша","байт"} };
+
+	
+
+	cout << "\n\n\t" << B[0][1];
+	cout << "\n\n\t" << B[1][2];
+
+
+	int A[7] = {2,7,21,9,33,13};
+	int min = A[0]; int max = A[0];
+	for (int k = 0; k < 6; k++)
+	{
+		printf("\n\tA[%2i]", k+1, A[k]) ;
+	}
+	for (int k = 1; k < 6; k++) {
+		if (min > A[k]) min = A[k];
+		if (min < A[k]) max = A[k];
+	}
+
+
+	cout << "\n\tmin=" << min;
+	cout << "\n\tmax=" << max;
+
+	printf("\n\t%i+%i+%i", min, max, min + max);
+
+	cout << endl << endl << "t";
+
+
+	cout << "Складенi вiдсотки:\n\n";
+	cout << "\tInt sum:";
+	double sum;
+	cin >> sum;
+	cout << "\tInt year percent:";
+	double perc;
+	cin >> perc;
+	perc = perc / 100;
+
+	cout << "\tInt term:";
+	int term;
+	cin >> term;
+
+	cout << "\n\nТАблица доходов на " << term << " рокiв\n\n";
+
+	double res;
+	res = sum * perc*term / 12;
+
+	cout << "Ваша сумма вигоди: " << res;
+
+	double total;
+	total = sum+ res;
+	cout << "Результат" << total;
+
+
+
+	
+	system("pause");
+	return 0;
+}
