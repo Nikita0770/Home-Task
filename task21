@@ -1,0 +1,36 @@
+#include <iostream>
+
+// додаткова бібліотека 
+#include <time.h>
+
+using namespace std;
+
+int main()
+{
+	// генератор випадкових чисел
+	
+	setlocale(LC_ALL, ".1251");
+	system("color 1F");
+	double x, y, z, a, b, h;
+
+	b = 10.4; h = 0.3;
+	for (a = 2.2; a <= 5.2; a += h) {
+		x = sin(powf(a, b));
+		y = a * tanf(x)+b;
+		if (y > 6) {
+			z = exp(x)*y - b;
+		}
+		else {
+			z = x * x*y*y*sinf(a);
+		}
+
+		printf("\tb=%3.1f\ta=%3.1f\tx=%8.6f\ty=%8.6f\tz=%12.8f\n", b, a, x, y, z);
+
+	}
+
+	
+
+	cout << endl << endl << "\t";
+	system("pause");
+	return 0;
+}
